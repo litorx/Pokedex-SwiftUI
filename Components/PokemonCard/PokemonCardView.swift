@@ -93,7 +93,7 @@ struct PokemonCardView: View {
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, constants.tx)
 
-            Text("\(pokemon.forms?.first.map { "\($0) " } ?? "")\(pokemon.name)")
+            Text(viewModel.displayName(for: pokemon))
                 .font(.title3.weight(.semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)
 

@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+
+public func pretty(_ s: String) -> String {
+    s.replacingOccurrences(of: "-", with: " ")
+     .trimmingCharacters(in: .whitespacesAndNewlines)
+     .capitalized
+}
+
+
 struct TextBorder: ViewModifier {
     var color: Color
     var lineWidth: Double

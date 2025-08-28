@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct PokedexApp: App {
+    struct PokedexApp: App {
     var body: some Scene {
         WindowGroup {
             PokemonHomeView()

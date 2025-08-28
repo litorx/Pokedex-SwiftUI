@@ -93,6 +93,7 @@
 		D25F55BD2E514062004603BD = {
 			isa = PBXGroup;
 			children = (
+				D2AD932F2E61027000C2FD04 /* Utils */,
 				D25F560B2E55F8CE004603BD /* Assets.xcassets */,
 				D2AD93102E5EA7D800C2FD04 /* Components */,
 				D2AD93052E5EA7D800C2FD04 /* PokemonHome */,
@@ -136,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				D2AD93072E5EA7D800C2FD04 /* PokemonViewModel.swift */,
-				D2AD93272E5F69E000C2FD04 /* TextBorder.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,6 +194,14 @@
 				D2AD93172E5EA7D800C2FD04 /* NavBarView.swift */,
 			);
 			path = NavBarView;
+			sourceTree = "<group>";
+		};
+		D2AD932F2E61027000C2FD04 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D2AD93272E5F69E000C2FD04 /* TextBorder.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
