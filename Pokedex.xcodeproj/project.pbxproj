@@ -63,6 +63,7 @@
 		D2AD93272E5F69E000C2FD04 /* TextBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBorder.swift; sourceTree = "<group>"; };
 		D2AD93292E5FC55400C2FD04 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D2AD932A2E5FCE8300C2FD04 /* PokedexApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexApp.swift; sourceTree = "<group>"; };
+		D2AD932C2E5FD3A200C2FD04 /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		D25F55BD2E514062004603BD = {
 			isa = PBXGroup;
 			children = (
+				D2AD932C2E5FD3A200C2FD04 /* .gitignore.md */,
 				D25F560B2E55F8CE004603BD /* Assets.xcassets */,
 				D2AD93102E5EA7D800C2FD04 /* Components */,
 				D2AD93052E5EA7D800C2FD04 /* PokemonHome */,
