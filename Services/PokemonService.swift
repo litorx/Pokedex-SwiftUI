@@ -40,11 +40,6 @@ class PokemonService {
         return try decoder.decode(Pokemon.self, from: data)
     }
 
-    // 3) Forms de um pokémon específico (reaproveita o detalhe)
-    func fetchForms(for idOrName: String) async throws -> [PokemonForm] {
-        let poke = try await fetchPokemonDetail(idOrName: idOrName)
-        return poke.forms ?? []
-    }
     
 }
 
