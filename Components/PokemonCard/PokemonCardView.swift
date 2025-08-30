@@ -37,33 +37,6 @@ struct PokemonCardView: View {
         .padding(.horizontal, constants.hp)
     }
 
-    @ViewBuilder
-    public func situationalCard() -> some View {
-        VStack(spacing: 12) {
-            Image(systemName: "magnifyingglass.circle")
-                .font(.system(size: 56, weight: .regular))
-                .opacity(0.3)
-
-            Text("Nenhum Pokémon aqui")
-                .font(.title3.weight(.semibold))
-
-            Text("Tente ajustar a busca ou limpar os filtros.")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
-        }
-        .padding(constants.hs)
-        .frame(maxWidth: .infinity, alignment: .center)
-        .background(
-            RoundedRectangle(cornerRadius: constants.cr)
-                .fill(Color.gray.opacity(0.1))
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: constants.cr)
-                .stroke(Color.gray.opacity(0.2), lineWidth: constants.lw)
-        )
-        .padding(.horizontal, constants.hp)
-    }
     
     @ViewBuilder
     private func Pokeimage() -> some View {
@@ -120,6 +93,33 @@ struct PokemonCardView: View {
             .padding(.top, constants.tp)
         }
     }
+    //    @ViewBuilder
+    //    public func situationalCard() -> some View {
+    //        VStack(spacing: 12) {
+    //            Image(systemName: "magnifyingglass.circle")
+    //                .font(.system(size: 56, weight: .regular))
+    //                .opacity(0.3)
+    //
+    //            Text("Nenhum Pokémon aqui")
+    //                .font(.title3.weight(.semibold))
+    //
+    //            Text("Tente ajustar a busca ou limpar os filtros.")
+    //                .font(.subheadline)
+    //                .foregroundStyle(.secondary)
+    //                .multilineTextAlignment(.center)
+    //        }
+    //        .padding(constants.hs)
+    //        .frame(maxWidth: .infinity, alignment: .center)
+    //        .background(
+    //            RoundedRectangle(cornerRadius: constants.cr)
+    //                .fill(Color.gray.opacity(0.1))
+    //        )
+    //        .overlay(
+    //            RoundedRectangle(cornerRadius: constants.cr)
+    //                .stroke(Color.gray.opacity(0.2), lineWidth: constants.lw)
+    //        )
+    //        .padding(.horizontal, constants.hp)
+    //    }
     
 }
 #Preview{

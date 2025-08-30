@@ -17,7 +17,7 @@ struct PokemonHomeView: View {
                     ForEach(viewModel.filteredPokemons){ row in
                         PokemonCardView(pokemon: row)
                             .onAppear{
-                                if row.id == viewModel.filteredPokemons.count - 5{
+                                if row.id == viewModel.filteredPokemons.count - 20{
                                     
                                     Task{
                                         await viewModel.loadPokemons()

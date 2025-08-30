@@ -20,8 +20,7 @@ class PokemonViewModel: ObservableObject {
 
     func loadPokemons() async {
         do {
-            let list = try await service.fetchAllPokemon(limit: 20)
-            print(service.next)
+            let list = try await service.fetchAllPokemon(limit: 40)
             var detailed: [Pokemon] = []
             
             for item in list{
@@ -29,6 +28,7 @@ class PokemonViewModel: ObservableObject {
                 detailed.append(poke)
             }
             self.pokemons.append(contentsOf: detailed)
+            self.pokemonsFilter()
         } catch {
             print("error")
         }
