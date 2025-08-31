@@ -1,6 +1,5 @@
 //
 //  TextBorder.swift
-//  Aula1
 //
 //  Created by Vitor on 27/08/25.
 //
