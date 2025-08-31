@@ -8,7 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct Pokemon: Identifiable, Codable {
+struct Pokemon: Identifiable, Codable, Equatable {
+    static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     let id: Int
     let name: String
     let forms: [PokemonForm]?
