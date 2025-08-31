@@ -1,6 +1,5 @@
 //
 //  NavBarConstants.swift
-//  Aula1
 //
 //  Created by Vitor on 20/08/25.
 //
