@@ -1,6 +1,5 @@
 //
 //  PokemonType.swift
-//  Aula1
 //
 //  Created by Vitor on 20/08/25.
 //
@@ -50,15 +49,4 @@ struct PokemonTypeSlot: Codable, Identifiable {
 struct PokemonTypeInfo: Codable {
     let name: PokemonType
 }
-
-
-//"types": [
-//    {
-//        "slot": 1,
-//        "type": {
-//            "name": "grass",
-//            "url": "https://pokeapi.co/api/v2/type/12/"
-//        }
-//    }
-//]
 
