@@ -1,6 +1,12 @@
+//
+//  PokemonCardView.swift
+//
+//  Created by Vitor on 16/08/25.
+//
+
 import SwiftUI
 
-// MARK: - Card simples
+
 struct PokemonCardView: View {
     let constants = PokemonCardConstants()
     @State var pokemon: Pokemon
@@ -121,7 +127,4 @@ struct PokemonCardView: View {
     //        .padding(.horizontal, constants.hp)
     //    }
     
-}
-#Preview{
-    PokemonHomeView()
 }
