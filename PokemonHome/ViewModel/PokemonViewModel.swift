@@ -1,6 +1,5 @@
 //
-//  TextSearch.swift
-//  Aula1
+//  ViewModel.swift
 //
 //  Created by Vitor on 20/08/25.
 import Foundation
