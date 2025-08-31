@@ -1,7 +1,5 @@
 //
 //  ContentView.swift
-//  Aula1
-//
 //  Created by Vitor on 16/08/25.
 //
 
