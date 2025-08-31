@@ -1,6 +1,5 @@
 //
 //  PokemonList.swift
-//  Aula1
 //
 //  Created by Vitor on 26/08/25.
 //
