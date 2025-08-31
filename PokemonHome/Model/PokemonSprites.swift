@@ -1,17 +1,8 @@
 //
 //  PokemonSprites.swift
-//  Aula1
 //
 //  Created by Vitor on 23/08/25.
 //
-
-//"sprites": {
-//    "official-artwork": {
-//        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-//        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1.png"
-//    }
-//},
-
 
 
 import Foundation
