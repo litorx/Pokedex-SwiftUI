@@ -9,14 +9,21 @@ import SwiftUI
 
 struct PokemonHomeView: View {
     @StateObject var viewModel = PokemonViewModel()
-    
     var body: some View {
         VStack{
             NavBarView(viewModel: viewModel)
             ScrollView(.vertical){
-                VStack(spacing: 12){
-                    ForEach(viewModel.filteresPokemons){ row in
+                LazyVStack(spacing: 12){
+                    ForEach(viewModel.filteredPokemons){ row in
                         PokemonCardView(pokemon: row)
+                            .onAppear{
+                                if row.id == viewModel.filteredPokemons.count - 20{
+                                    
+                                    Task{
+                                        await viewModel.loadPokemons()
+                                    }
+                                }
+                            }
                     }
                     
                 }
@@ -24,8 +31,8 @@ struct PokemonHomeView: View {
             }
             
         }
-        .onAppear {
-            viewModel.pokemonsFilter()
+        .task{
+            await viewModel.loadPokemons()
         }
     }
 }
