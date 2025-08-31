@@ -5,66 +5,35 @@
 //  Created by Vitor on 20/08/25.
 import Foundation
 
+@MainActor
 class PokemonViewModel: ObservableObject {
-    let pokemons: [Pokemon] = [
-        .init(
-            id: 4,
-            name: "Charmander",
-            forms: nil,
-            types:[
-                PokemonTypeSlot(slot: 1, type: PokemonTypeInfo(name: .fire))
-            ],
-            sprites: PokemonSprites(
-                front_default: nil,
-                other: .init(
-                    officialArtwork: .init(
-                        front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png", front_shiny: nil
-                    )
-                )
-            )
-        ),
-        .init(
-            id: 196,
-            name: "Espeon",
-            forms: nil,
-            types: [
-                PokemonTypeSlot(slot: 1, type: PokemonTypeInfo(name: .psychic))
-            ],
-            sprites: PokemonSprites(
-                front_default: nil,
-                other: .init(
-                    officialArtwork: .init(
-                        front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/196.png", front_shiny: nil
-                    )
-                )
-            )
-        ),
-        .init(
-            id: 12,
-            name: "Abc",
-            forms: nil,
-            types: [
-                PokemonTypeSlot(slot: 1, type: PokemonTypeInfo(name: .dragon)),
-                PokemonTypeSlot(slot: 2, type: PokemonTypeInfo(name: .electric))
-            ],
-
-            sprites: PokemonSprites(
-                front_default: nil,
-                other: .init(
-                    officialArtwork: .init(
-                        front_default: "", front_shiny: nil
-                    )
-                )
-            )
-        )
-
-    ]
-
-    @Published var filteresPokemons: [Pokemon] = []
+    @Published var pokemons: [Pokemon] = [ ]
+    
+    private let service = PokemonService()
+    var currentPage: Int = 1
+    var totalPages: Int = 1
+    @Published var filteredPokemons: [Pokemon]  = []
     @Published var searchText = ""
     init() {
         
     }
+
+    func loadPokemons() async {
+        do {
+            let list = try await service.fetchAllPokemon(limit: 40)
+            var detailed: [Pokemon] = []
+            
+            for item in list{
+                let poke = try await service.fetchPokemonDetail(idOrName: item.name)
+                detailed.append(poke)
+            }
+            self.pokemons.append(contentsOf: detailed)
+            self.pokemonsFilter()
+        } catch {
+            print("error")
+        }
+    }
+    
     func spriteURL(for pokemon: Pokemon) -> URL? {
         let raw = pokemon.sprites.other.officialArtwork.front_default
                  ?? pokemon.sprites.front_default
@@ -98,16 +67,12 @@ class PokemonViewModel: ObservableObject {
     func pokemonsFilter() {
         if isSearchById(searchText) {
             let id = extractId(searchText)
-            filteresPokemons = filterPokemons(id, pokemons)
+            filteredPokemons = filterPokemons(id, pokemons)
         } else {
-            filteresPokemons = filterPokemons( searchText, pokemons)
+            filteredPokemons = filterPokemons(searchText, pokemons)
         }
     }
     
-    
-    func getPokemons() -> [Pokemon] {
-        return []
-    }
     
     
     func searchText(textSearched: String) -> Int? {
@@ -115,5 +80,24 @@ class PokemonViewModel: ObservableObject {
             return poke.name.lowercased() == textSearched.lowercased()
         }
         return foundPokemon?.id
+    }
+    
+
+
+    func displayName(for pokemon: Pokemon) -> String {
+        let base = pretty(pokemon.name)
+        let rawForm = pokemon.forms?.first?.name ?? ""
+
+        if rawForm.isEmpty { return base }
+
+        var form = pretty(rawForm)
+
+        if form.caseInsensitiveCompare(base) == .orderedSame { return base }
+
+        if form.lowercased().hasPrefix(base.lowercased()) {
+            form = String(form.dropFirst(base.count)).trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+
+        return form.isEmpty ? base : "\(base) \(form)"
     }
 }
