@@ -6,6 +6,12 @@ A Pokédex construída com **SwiftUI** e **MVVM**, consumindo a **PokéAPI**. Pe
 
 ---
 
+## Screenshots
+
+<img width="220" height="450" alt="Captura de Tela 2025-09-22 às 10 07 56" src="https://github.com/user-attachments/assets/74380f74-ad60-4a88-9d0e-1c54cbeb28e0" /> <img width="220" height="450" alt="Captura de Tela 2025-09-22 às 10 08 28" src="https://github.com/user-attachments/assets/324c44ae-88c5-444f-af93-697130a02b80" /><img width="220" height="450" alt="Captura de Tela 2025-09-22 às 10 08 59" src="https://github.com/user-attachments/assets/7b0682e4-052d-43e9-9fa2-62f020225f5b" />
+
+---
+
 ##  Features
 
 - Lista de Pokémon com rolagem fluida
@@ -70,11 +76,6 @@ Sprites utilizados (prioridade):
 1) `sprites.other["official-artwork"].front_default`
 2) `sprites.front_default` (fallback)
 
----
-
-##Screnshots
-
-<img width="220" height="450" alt="Captura de Tela 2025-09-22 às 10 07 56" src="https://github.com/user-attachments/assets/74380f74-ad60-4a88-9d0e-1c54cbeb28e0" /> <img width="220" height="450" alt="Captura de Tela 2025-09-22 às 10 08 28" src="https://github.com/user-attachments/assets/324c44ae-88c5-444f-af93-697130a02b80" /><img width="220" height="450" alt="Captura de Tela 2025-09-22 às 10 08 59" src="https://github.com/user-attachments/assets/7b0682e4-052d-43e9-9fa2-62f020225f5b" />
 
 ---
 
