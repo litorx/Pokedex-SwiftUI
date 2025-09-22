@@ -2,8 +2,6 @@
 
 A Pokédex construída com **SwiftUI** e **MVVM**, consumindo a **PokéAPI**. Permite listar Pokémon, pesquisar por nome/ID, ver detalhes (tipos, nome, podekex, sprites) e paginar resultados — com foco em código limpo e navegabilidade fluida.
 
-> Repo: https://github.com/litorx/Pokedex-SwiftUI
-
 ---
 
 ## Screenshots
